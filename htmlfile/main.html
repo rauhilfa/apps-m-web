@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+
+
+<!-- /*
+*
+*-------------------------Creator Info---------------------------
+*               @creator: Rauhil Fahmi Asa (RFA)
+*                Createe Date : 20 Maret 2019
+*
+*/ -->
+
+
+<html>
+<title>IndiHub</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href=" ../cssfile/stylecss.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css'
+  integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
+
+
+<body id="body">
+
+
+  <!-- /*
+  *
+  *
+  *----------------- General Header---------------------------
+  *
+  *
+  */ -->
+
+
+
+
+  <div id="header">
+    
+    <div class="ih-bar ih-large ih-light-blue" id="head-header">
+      <span class="ih-bar-header" id="header-name">Communications</span>
+      <a id="menu-item" class="ih-bar-header ih-right menu-icon" onclick="menuitem.clickmenuitem()"><i class="fa fa-ellipsis-v"></i></a>
+            <!-- <div class="ih-dropdown-click">
+              <div id="menuclick" class="ih-dropdown-content ih-bar-block ih-border">
+                <a href="#" class="ih-bar-item ih-button">Favorite Message</a>
+                <a href="#" class="ih-bar-item ih-button">Mark All as Read</a>
+                <a href="#" class="ih-bar-item ih-button">Explore Discussion Forum</a>
+              </div>
+            </div> -->
+       
+      <a id="btn-search" class="ih-bar-header ih-right menu-icon" onclick="searchview.searchview()"><i
+          class="fa fa-search"></i></a>
+      <a id="btn-setting" class="ih-bar-header ih-right menu-icon" onclick="setting.openSetting()"
+        style="display: none"><i class="fas fa-sun"></i></a>
+    </div>
+   
+
+    <!-- /*Search Header*/ -->
+
+    <div class="ih-bar ih-large ih-light-blue"
+      style="padding-top:10px;padding-bottom:10px;line-height: 1.5; display: none" id="header-search">
+      <span><i class="fas fa-arrow-left" style="float:left;padding-right: 20px; padding-left: 20px; padding-top:8px"
+          onclick="searchview.backToHeadHeader()"></i></span>
+      <input class="ih-small" type="search" placeholder="Search..." onsearch=""></span>
+    </div>
+
+
+    <div class="ih-row  ih-card-4 ih-white">
+      <a onclick="uclist.showUcList(event, uc_id)">
+        <div class="ih-col s2  ih-hover-light-grey ih-button "><img id="uc_icon" class='tabicon'
+            src=" ../imgfile/ac_nuc_chat.png">
+        </div>
+      </a>
+      <a onclick="directories.showDirectories(event, directori_id)">
+        <div class="ih-col s2  ih-hover-light-grey  ih-button"><img id="directories_icon" class='tabicon'
+            src=" ../imgfile/inac_nuc_talent.png">
+        </div>
+      </a>
+      <a onclick="form.showForm(event, form_id)">
+        <div class="ih-col s2 ih-hover-light-grey ih-button"><img id="form_icon" class='tabicon'
+            src=" ../imgfile/inac_nuc_survey.png">
+        </div>
+      </a>
+
+      <a onclick="discover.showDiscover(event, discover_id)">
+        <div class="ih-col s2  ih-hover-light-grey  ih-button"><img id="discover_icon" class='tabicon'
+            src=" ../imgfile/inac_nuc_live.png">
+        </div>
+      </a>
+
+      <a onclick="more.showMore(event, more_id)">
+        <div class="ih-col s2 ih-hover-light-grey ih-button"><img id="more_icon" class='tabicon'
+            src=" ../imgfile/inac_nuc_feed.png">
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <!-- /*Editor Header*/ -->
+  <div id="header-editor" style="display: none">
+    <div class="ih-bar ih-large ih-light-blue" style="padding-top:10px;padding-bottom:10px;line-height: 1;">
+      <span><i class="fas fa-arrow-left" style="float:left;padding-right: 20px; padding-left: 20px; padding-top:8px"
+          onclick="editor.backToUC()"></i></span>
+      <img src=" ../imgfile/twsn_contact_icon.png" class="avatareditor">
+      <div class="ih-bar-item ">
+        <span class="ih-large">Mike</span><br>
+        <span class="ih-small">Web Designer</span><br>
+      </div>
+      <a id="btn-setting-editor" class="ih-bar-header ih-right menu-icon"><i class="fa fa-ellipsis-v"></i></a>
+      <a id="btn-search-editor" class="ih-bar-header ih-right menu-icon" onclick=""><i class="fas fa-phone"></i></a>
+    </div>
+  </div>
+
+  <!-- /*Detail Person Info/Group/DF Header*/ -->
+  <div id="header-detailinfo" style="display: none">
+    <div class="ih-bar ih-large ih-light-blue" style="padding-top:10px;padding-bottom:10px;line-height: 1;">
+      <span><i class="fas fa-arrow-left" style="float:left;padding-right: 20px; padding-left: 20px; padding-top:8px"
+          onclick="info.backToDir()"></i></span>
+      <img src=" ../imgfile/twsn_contact_icon.png" class="avatareditor">
+      <div class="ih-bar-item " style="padding-top:10px; ">
+        <span class="ih-large">Rauhil</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- /*Detail Form Header*/ -->
+  <div id="header-detailform" style="display: none">
+    <div class="ih-bar ih-large ih-light-blue" style="padding-top:10px;padding-bottom:10px;line-height: 1;">
+      <span><i class="fas fa-arrow-left" style="float:left;padding-right: 20px; padding-left: 20px; padding-top:8px"
+          onclick="formDetail.backToFormList()"></i></span>
+
+      <div class="ih-bar-item ">
+        <span class="ih-large">Lunch</span><br>
+        <span class="ih-small">Approved</span><br>
+      </div>
+    </div>
+  </div>
+
+  <!-- /*Setting Header*/ -->
+  <div id="header-setting" style="display: none">
+    <div class="ih-bar ih-large ih-light-blue" style="padding-top:10px;padding-bottom:10px;line-height: 1.5;">
+      <span><i class="fas fa-arrow-left" style="float:left;padding-right: 20px; padding-left: 20px; padding-top:8px"
+          onclick="setting.backToFormMore()"></i></span>
+      <div class="ih-bar-item " style="padding-top:4px; ">
+        <span class="ih-large">Settings</span>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <!-- /*
+  *
+  *
+  *----------------------General Body Content-----------------------
+  *
+  *
+  */ -->
+
+
+
+
+  <div id="content-body">
+    <div class="ih-bar ih-card-4 ih-pad container_filter_inner ih-white" id="ih-bar-filter">
+      <div onclick="detaile.showHideFilter()" class="ih-large">All Communications 
+        <img id="arrowchange" class="icon_sort" src=" ../imgfile/twsn_search_down.png">
+      </div>
+      <div class="filter_list">
+        <i class="fas fa-users ih-text-blue ih-small "></i>
+        <span> Organization Comunication</span>
+        <input type="checkbox" id="filter_active" class="check_filter" checked></input>
+      </div>
+      <div class="filter_list">
+        <i class="fas fa-user-friends ih-text-blue ih-small"></i>
+        <span> Group Comunication </span>
+        <input type="checkbox" id="filter_active" class="check_filter" checked></input>
+      </div>
+      <div class="filter_list">
+        <i class="fas fa-user-alt ih-text-blue ih-small "></i>
+        <span> Personal Comunication </span>
+        <input type="checkbox" id="filter_active" class="check_filter" checked></input>
+      </div>
+    </div>
+    <div id="uc_id" class="tab" style="display:block;">
+      <ul class="ih-ul">
+        <li class="ih-bar-new" onclick="editor.openEditor()"><span class="ih-bar-item ih-tiny ih-right">12.55</span>
+          <img src=" ../imgfile/twsn_contact_icon.png" class="avatar">
+          <div class="ih-bar-item ">
+            <span class="ih-large paddingTextUc">Mike</span><br>
+            <span class="ih-small paddingTextUc">Web Designer</span><br>
+            <i class="fas fa-comments ih-text-blue ih-small paddingTextUc"></i><span class="ih-small msg-text">Doraemon
+              lagi apa?</span>
+            <i class="statusUnread ih-bar-item ih-small ih-right">11</i>
+          </div>
+        </li>
+
+        <li class="ih-bar-new" onclick="editor.openEditor(id)"><span class="ih-bar-item ih-tiny ih-right">12.55</span>
+          <img src=" ../imgfile/twsn_contact_icon.png" class="avatar">
+          <div class="ih-bar-item ">
+            <span class="ih-large paddingTextUc">Mike</span><br>
+            <span class="ih-small paddingTextUc">Web Designer</span><br>
+            <i class="fas fa-comments ih-text-blue ih-small paddingTextUc"></i><span class="ih-small msg-text">Doraemon
+              lagi apa?</span>
+            <i class="fa fa-check ih-bar-item ih-small ih-right"></i>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div id="directori_id" class="tab">
+      <ul class="ih-ul">
+        <li class="ih-bar-new" onclick="info.openInfo()">
+          <span class="ih-bar-item ih-tiny ih-right indicator"></span>
+          <img src=" ../imgfile/twsn_contact_icon.png" class="avatar">
+          <div class="ih-bar-item">
+            <span class="ih-large paddingTextUc">Rauhil</span><br>
+            <span class="ih-small paddingTextUc">Web Designer</span><br>
+            <span class="ih-bar-item ih-small ih-right">28 Mar 2019</span>
+          </div>
+        </li>
+
+        <li class="ih-bar-new" onclick="">
+          <span class="ih-bar-item ih-tiny ih-right indicator"></span>
+          <img src=" ../imgfile/twsn_contact_icon.png" class="avatar">
+          <div class="ih-bar-item">
+            <span class="ih-large paddingTextUc">Fahmi</span><br>
+            <span class="ih-small paddingTextUc">Programmer</span><br>
+            <span class="ih-bar-item ih-small ih-right">28 Mar 2019</span>
+          </div>
+         
+        </li>
+      </ul>
+    </div>
+
+
+
+    <div id="form_id" class="tab">
+      <ul class="ih-ul">
+        <li class="ih-bar-new" onclick="formDetail.openForm()">
+          <span class="ih-bar-item ih-tiny ih-right">28 Mar 2019</span>
+          <div class="ih-bar-item">
+            <span class="ih-large">Lunch</span><br>
+            <span class="ih-small"></span><br>
+            <span class="ih-small ih-text-grey"></span>
+            <span class="ih-bar-item ih-small ih-right">Approved</span>
+          </div>
+        </li>
+
+        <li class="ih-bar-new" onclick="">
+          <span class="ih-bar-item ih-tiny ih-right">28 Mar 2019</span>
+          <div class="ih-bar-item">
+            <span class="ih-large">Assigment</span><br>
+            <span class="ih-small">Target: 30 Maret 2019 00:00</span><br>
+            <span class="ih-small ih-text-grey">Olahraga</span>
+            <span class="ih-bar-item ih-small ih-right">Open</span>
+          </div>
+        </li>
+
+        <li class="ih-bar-new" onclick="">
+          <span class="ih-bar-item ih-tiny ih-right">29 Mar 2019</span>
+          <div class="ih-bar-item">
+            <span class="ih-large">Open Invitation</span><br>
+            <span class="ih-small">Target: 30 Maret 2019 00:00</span><br>
+            <span class="ih-small ih-text-grey">Meeting</span>
+            <span class="ih-bar-item ih-small ih-right">Open</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div id="discover_id" class="tab">
+      <div class="ih-content mySlidesBorder" style="max-width:100%">
+        <img class="mySlides" src=" ../imgfile/img_snowtops.jpg" style="width:100%">
+        <img class="mySlides" src=" ../imgfile/img_lights.jpg" style="width:100%">
+        <img class="mySlides" src=" ../imgfile/img_mountains.jpg" style="width:100%">
+        <img class="mySlides" src=" ../imgfile/img_forest.jpg" style="width:100%">
+
+
+        <button class="ih-button ih-black ih-display-left" onclick="plusDivs(-1)">&#10094;</button>
+        <button class="ih-button ih-black ih-display-right" onclick="plusDivs(1)">&#10095;</button>
+      </div>
+
+      <ul class="ih-ul">
+        <div class="ih-bar-header">
+          <span>Latest News</span><br>
+        </div>
+
+        <li class="ih-bar" onclick="">
+          <img src=" ../imgfile/img_lights.jpg" class="dicoverlist">
+          <div class="ih-bar-item">
+            <span class="ih-large">Yulius</span><br>
+            <span>Web Designer</span>
+          </div>
+        </li>
+
+        <li class="ih-bar" onclick="">
+          <img src=" ../imgfile/img_mountains.jpg" class="dicoverlist">
+          <div class="ih-bar-item">
+            <span class="ih-large">Rifqy</span><br>
+            <span>Support</span>
+          </div>
+        </li>
+
+        <li class="ih-bar" onclick="">
+          <img src=" ../imgfile/img_snowtops.jpg" class="dicoverlist">
+          <div class="ih-bar-item">
+            <span class="ih-large">Rifqy</span><br>
+            <span>Support</span>
+          </div>
+        </li>
+
+        <li class="ih-bar" onclick="">
+          <img src=" ../imgfile/img_forest.jpg" class="dicoverlist">
+          <div class="ih-bar-item">
+            <span class="ih-large">Rifqy</span><br>
+            <span>Support</span>
+          </div>
+        </li>
+
+
+      </ul>
+    </div>
+
+    <div id="more_id" class="tab">
+      <ul class="ih-ul">
+        <li class="ih-bar" onclick="">
+          <span onclick="info.openInfo()" class="ih-bar-item ih-button ih-right ih-text-blue">Edit</span>
+          <img src=" ../imgfile/twsn_contact_icon.png" class="avatar">
+          <div class="ih-bar-item">
+            <span class="ih-large">Rauhil</span><br>
+            <span>Web Designer</span>
+          </div>
+
+        </li>
+      </ul><br>
+
+      <div class="ih-row">
+        <div class="ih-col s4 ih-button">
+          <div class="ih-card-2 card">
+            <i class='far fa-envelope ih-text-blue' style='font-size:24px;'></i><br>
+            <span class="ih-small">E-mail</spand>
+          </div>
+        </div>
+
+        <div class="ih-col s4 ih-button">
+          <div class="ih-card-2 card">
+            <i class='fas fa-phone ih-text-blue' style='font-size:24px;'></i><br>
+            <span class="ih-small">Phone Call</span>
+          </div>
+        </div>
+
+        <div class="ih-col s4 ih-button">
+          <div class="ih-card-2 card">
+            <i class='far fa-comment-alt ih-text-blue' style='font-size:24px;'></i><br>
+            <span class="ih-small">SMS</span>
+          </div>
+        </div>
+      </div><br>
+      <div class="ih-row">
+        <div class="ih-col s4 ih-button">
+          <div class="ih-card-2 card ">
+            <i class='fas fa-street-view ih-text-blue' style='font-size:24px;'></i><br>
+            <span class="ih-small">Nearby</span>
+          </div>
+        </div>
+
+        <div class="ih-col s4 ih-button">
+          <div class="ih-card-2 card">
+            <i class='fas fa-podcast ih-text-blue' style='font-size:24px;'></i><br>
+            <span class="ih-small">Streaming</span>
+          </div>
+        </div>
+
+        <div class="ih-col s4  ih-button">
+          <div class="ih-card-2 card ">
+            <i class='far fa-calendar-alt ih-text-blue' style='font-size:24px;'></i><br>
+            <span class="ih-small">Calendar</span>
+          </div>
+        </div>
+      </div><br>
+      <div class="ih-row">
+        <div class="ih-col s4 ih-button">
+          <div class="ih-card-2 card">
+            <i class='far fa-chart-bar ih-text-blue' style='font-size:24px;'></i><br>
+            <span class="ih-small">Dashboard</span>
+          </div>
+        </div>
+
+        <div class="ih-col s4 ih-button">
+          <div class="ih-card-2 card">
+            <i class='fas fa-video ih-text-blue' style='font-size:24px;'></i><br>
+            <span class="ih-small">Surveillance</span>
+          </div>
+        </div>
+
+        <div class="ih-col s4 ih-button">
+          <div class="ih-card-2 card">
+            <i class='fas fa-wallet ih-text-blue' style='font-size:24px;'></i><br>
+            <span class="ih-small">Wallet</span>
+          </div>
+        </div>
+      </div><br>
+    </div>
+  </div>
+
+  <!-- /*Editor Body Content*/ -->
+  <div id="content-body-editor" style="display: none">
+  </div>
+
+  <!-- /*Detail Person Info/Group/DF Body Content*/ -->
+  <div id="content-body-detailinfo" style="display: none">
+    <div class="detailinfo">
+      <ul class="ih-ul">
+        <li class="ih-bar-new ">
+          <img src=" ../imgfile/twsn_contact_icon.png" class="profileImage">
+        </li>
+        <li class="ih-bar-new">
+          <div class="ih-row ">
+            <a onclick="">
+              <div class="ih-col s6 ih-button"><i id="uc_icon" class='fas fa-comment-alt tabicon'
+                  style="color:#425894"></i></div>
+            </a>
+            <a onclick="">
+              <div class="ih-col s6  ih-button "><i id="uc_icon" class='fas fa-phone tabicon' style="color:#425894"></i>
+              </div>
+            </a>
+          </div>
+        </li>
+        <li class="ih-bar-new">
+          <div class="ih-row ">
+            <a onclick="uclist.showUcList(event, uc_id)">
+              <div class="ih-col s6 ih-hover-light-grey ih-button ">Detail Contact</div>
+            </a>
+            <a onclick="uclist.showUcList(event, uc_id)">
+              <div class="ih-col s6  ih-hover-light-grey ih-button ">All Media</div>
+            </a>
+          </div>
+        </li>
+        <li class="ih-bar-new">
+          <div class="ih-bar-item">
+            <span class="ih-small  ih-text-grey">Status</span><br>
+            <span class="ih-large">Olahraga</span>
+          </div>
+        </li>
+        <li class="ih-bar-new">
+          <div class="ih-bar-item">
+            <span class="ih-small  ih-text-grey">Position</span><br>
+            <span class="ih-large">Staf Product Solution</span>
+          </div>
+        </li>
+        <li class="ih-bar-new">
+          <div class="ih-bar-item">
+            <span class="ih-small  ih-text-grey">Email</span><br>
+            <span class="ih-large">Olahraga@yahoo.com</span>
+          </div>
+        </li>
+        <li class="ih-bar-new">
+          <div class="ih-bar-item">
+            <span class="ih-small  ih-text-grey">Phone Number</span><br>
+            <span class="ih-large">Olahraga</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- /*Detail Form Body Content*/ -->
+  <div id="content-body-detailform" style="display: none">
+    <div class="detailform">
+      <ul class="ih-ul">
+        <li class="ih-bar-new">
+          <div class="ih-bar-item">
+            <span class="ih-small  ih-text-gray">Submitted to</span> <span class="ih-bar-item ih-tiny ih-right">28 Mar
+              2019</span><br>
+            <span class="ih-large">Herman Susilo</span>
+          </div>
+        </li>
+        <li class="ih-bar-new">
+          <div class="ih-bar-item">
+            <span class="ih-small  ih-text-gray">Shop/Cafe Name*</span><br>
+            <span class="ih-large">Pagi Sore</span>
+          </div>
+        </li>
+        <li class="ih-bar-new">
+          <div class="ih-bar-item">
+            <span class="ih-small  ih-text-gray">Order*</span><br>
+            <span class="ih-large">Nasi Padang</span>
+          </div>
+        </li>
+        <li class="ih-bar-new">
+          <div class="ih-bar-item">
+            <span class="ih-small  ih-text-gray">Note</span><br>
+            <span class="ih-large">-</span>
+          </div>
+        </li>
+        <li class="ih-bar-new">
+          <div class="ih-bar-item">
+            <span class="ih-small  ih-text-gray">Case*</span><br>
+            <span class="ih-large">15.00</span>
+          </div>
+        </li>
+        <li class="ih-bar-new">
+          <div class="ih-bar-item">
+            <span class="ih-small  ih-text-gray">Approved By</span><br>
+            <span class="ih-large">Herman Susilo</span>
+          </div>
+        </li>
+        <li class="ih-bar-new">
+          <div class="ih-bar-item">
+            <span class="ih-small  ih-text-gray">Time</span><br>
+            <span class="ih-large">28 Mar 2019, 10:25:13</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- /*Setting Body Content*/ -->
+  <div id="content-body-setting" style="display: none">
+    <div class="detailsetting">
+      <ul class="ih-ul">
+        <li class="ih-bar-new">
+          <div class="ih-bar-item">
+            <h6 class="ih-text-blue">IndiHub Web</h6><br>
+            <span class="ih-small">Sync to Access IndiHub Web</span><br>
+          </div>
+        </li>
+        <li class="ih-bar-new">
+          <div class="ih-bar-item">
+            <h6 class="ih-text-blue">Instan Messaging</h6><br>
+            <span class="ih-small">Message Notification</span><br>
+            <span class="ih-small  ih-text-gray">Default</span>
+          </div>
+        </li>
+        <li class="ih-bar-new">
+          <div class="ih-bar-item">
+            <span class="ih-small">Vibrate</span><br>
+            <span class="ih-small  ih-text-gray">Yes</span>
+          </div>
+        </li>
+        <li class="ih-bar-new">
+          <div class="ih-bar-item">
+            <span class="ih-small">Message Preview</span><br>
+            <span class="ih-small  ih-text-gray">Disabled</span>
+          </div>
+        </li>
+        <li class="ih-bar-new">
+          <div class="ih-bar-item">
+            <span class="ih-small">Font Size</span><br>
+            <span class="ih-small  ih-text-gray">Medium</span>
+          </div>
+        </li>
+        <li class="ih-bar-new">
+          <div class="ih-bar-item">
+            <span class="ih-small">Auto Favorite Message(s) @Me</span><br>
+            <span class="ih-small  ih-text-gray">Enabled</span>
+          </div>
+        </li>
+        <li class="ih-bar-new">
+          <div class="ih-bar-item">
+            <span class="ih-small">Backup & Restore</span><br>
+            <span class="ih-small  ih-text-gray">Backup & Restore</span>
+          </div>
+        </li>
+        <li class="ih-bar-new">
+          <div class="ih-bar-item">
+            <h6 class="ih-text-blue">Email</h6><br>
+            <span class="ih-small">Message Notification</span><br>
+            <span class="ih-small  ih-text-gray">Default</span>
+          </div>
+        </li>
+        <li class="ih-bar-new">
+          <div class="ih-bar-item">
+            <h6 class="ih-text-blue">Live Streaming</h6><br>
+            <span class="ih-small">Auto Play</span><br>
+            <span class="ih-small  ih-text-gray">On</span>
+          </div>
+        </li>
+        <li class="ih-bar-new">
+          <div class="ih-bar-item">
+            <h6 class="ih-text-blue">Display</h6><br>
+            <span class="ih-small">Batik Wallpaper</span><br>
+            <span class="ih-small  ih-text-gray">Disabled</span>
+          </div>
+        </li>
+        <li class="ih-bar-new">
+          <div class="ih-bar-item">
+            <h6 class="ih-text-blue">Security</h6><br>
+            <span class="ih-small">Security Mode</span><br>
+            <span class="ih-small  ih-text-gray">On</span>
+          </div>
+        </li>
+        <li class="ih-bar-new">
+          <div class="ih-bar-item">
+            <h6 class="ih-text-blue">Battery</h6><br>
+            <span class="ih-small">Battery Optimization</span><br>
+            <span class="ih-small  ih-text-gray">Not optimized</span>
+          </div>
+        </li>
+        <li class="ih-bar-new">
+          <div class="ih-bar-item">
+            <h6 class="ih-text-blue">Images</h6><br>
+            <span class="ih-small">Save to gallery</span><br>
+            <span class="ih-small  ih-text-gray">no</span>
+          </div>
+        </li>
+        <li class="ih-bar-new">
+          <div class="ih-bar-item">
+            <span class="ih-small">Image Compression</span><br>
+            <span class="ih-small  ih-text-gray">On</span>
+          </div>
+        </li>
+        <li class="ih-bar-new">
+          <div class="ih-bar-item">
+            <h6 class="ih-text-blue">Help</h6><br>
+            <span class="ih-small">FAQ</span>
+          </div>
+        </li>
+        <li class="ih-bar-new">
+          <div class="ih-bar-item">
+            <span class="ih-small">Terms of Services</span><br>
+          </div>
+        </li>
+
+        <li class="ih-bar-new">
+          <div class="ih-bar-item">
+            <h6 class="ih-text-blue">Version</h6><br>
+            <span class="ih-small">V2.11.10.2.f</span>
+          </div>
+        </li>
+        <li class="ih-bar-new">
+          <div class="ih-bar-item">
+            <h6 class="ih-text-blue">Build</h6><br>
+            <span class="ih-small">8.11.10.2.f-38017</span><br>
+            <span class="ih-small  ih-text-gray">UCX-J8-190319031903s.148</span>
+            <span class="ih-small  ih-text-gray">true</span><br>
+            <img src=" ../imgfile/indihub.png" style="height: 20px;">
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+
+
+
+  <!-- /*
+  *
+  *
+  *-----------------------------------General Footer-------------------------------
+  *
+  *
+  */ -->
+
+
+
+  <div id="bottom">
+    <button onclick="detaile.gotopFunction()" id="gotop" title="Go to top"><i
+        class="fas fa-angle-double-up"></i></button>
+    <button onclick="" id="iconBottomUC" class="iconBottom" style="display: block"><i
+        class="fas fa-comment-alt"></i></button>
+    <button onclick="" id="iconBottomDir" class="iconBottom"><i class="fas fa-user-plus "></i></button>
+    <button onclick="" id="iconBottomForm" class="iconBottom"><i class="far fa-edit"></i></button>
+  </div>
+
+  <div id="bottom-editor" style="display: none">
+    <textarea class="textarea" rows="5" type="text" placeholder="Type here!"></textarea>
+    <div class="attact"><i class="fa fa-plus"></i></div>
+    <div class="send"><i class="fas fa-comments ih-text-blue"></i></div>
+  </div>
+</body>
+
+</html>
+
+
+<!-- /*
+*
+*
+*--------------------------Script Link File-----------------------------------
+*
+*
+*/ -->
+
+
+<script language="JavaScript" type="text/javascript" src=" ../jsfile/uc.js"></script>
+<script language="JavaScript" type="text/javascript" src=" ../jsfile/directories.js"></script>
+<script language="JavaScript" type="text/javascript" src=" ../jsfile/discover.js"></script>
+<script language="JavaScript" type="text/javascript" src=" ../jsfile/form.js"></script>
+<script language="JavaScript" type="text/javascript" src=" ../jsfile/more.js"></script>
+<script language="JavaScript" type="text/javascript" src=" ../jsfile/detaile.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
