@@ -13,10 +13,10 @@ var detaile = {
 			}
 		}
 
-		if (document.getElementById("arrowchange").src === " ../imgfile/twsn_search_down.png"){
-			document.getElementById("arrowchange").src = " ../imgfile/twsn_search_up.png";
+		if (document.getElementById("arrowchange").src === "./imgfile/twsn_search_down.png"){
+			document.getElementById("arrowchange").src = "./imgfile/twsn_search_up.png";
 		}else{
-			document.getElementById("arrowchange").src = " ../imgfile/twsn_search_down.png";
+			document.getElementById("arrowchange").src = "./imgfile/twsn_search_down.png";
 		}
 	},
 

@@ -24,11 +24,11 @@ var discover = {
     // Melakukan perubahan icon pada tab menu
 	changeIcon: function () {
 		document.getElementById("header-name").innerHTML = "Discover";
-		document.getElementById("uc_icon").src = " ../imgfile/inac_nuc_chat.png";
-		document.getElementById("directories_icon").src = " ../imgfile/inac_nuc_talent.png";
-		document.getElementById("form_icon").src = " ../imgfile/inac_nuc_survey.png";
-		document.getElementById("discover_icon").src = " ../imgfile/ac_nuc_live.png";
-		document.getElementById("more_icon").src = " ../imgfile/inac_nuc_feed.png";
+		document.getElementById("uc_icon").src = "./imgfile/inac_nuc_chat.png";
+		document.getElementById("directories_icon").src = "./imgfile/inac_nuc_talent.png";
+		document.getElementById("form_icon").src = "./imgfile/inac_nuc_survey.png";
+		document.getElementById("discover_icon").src = "./imgfile/ac_nuc_live.png";
+		document.getElementById("more_icon").src = "./imgfile/inac_nuc_feed.png";
 	},
 
 	// Melakukan perubahan icon bottom
@@ -59,7 +59,7 @@ var discover = {
 
 		$('#ih-bar-filter').empty();
 		var dirFilter =
-			'<div onclick="detaile.showHideFilter()" id="arrowChange" class="ih-large">Discover News<img id="arrowchange" class="icon_sort" src=" ../imgfile/twsn_search_down.png"></div>' +
+			'<div onclick="detaile.showHideFilter()" id="arrowChange" class="ih-large">Discover News<img id="arrowchange" class="icon_sort" src="./imgfile/twsn_search_down.png"></div>' +
 			'<div class="filter_list"> ' +
 			'<i class="far fa-file-alt ih-text-blue ih-small " ></i>' +
 			'<span>  Discover News</span>' +

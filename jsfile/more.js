@@ -21,11 +21,11 @@ var more = {
 
 	changeIcon: function () {
 		document.getElementById("header-name").innerHTML = "More";
-		document.getElementById("uc_icon").src = " ../imgfile/inac_nuc_chat.png";
-		document.getElementById("directories_icon").src = " ../imgfile/inac_nuc_talent.png";
-		document.getElementById("form_icon").src = " ../imgfile/inac_nuc_survey.png";
-		document.getElementById("discover_icon").src = " ../imgfile/inac_nuc_live.png";
-		document.getElementById("more_icon").src = " ../imgfile/ac_nuc_feed.png";
+		document.getElementById("uc_icon").src = "./imgfile/inac_nuc_chat.png";
+		document.getElementById("directories_icon").src = "./imgfile/inac_nuc_talent.png";
+		document.getElementById("form_icon").src = "./imgfile/inac_nuc_survey.png";
+		document.getElementById("discover_icon").src = "./imgfile/inac_nuc_live.png";
+		document.getElementById("more_icon").src = "./imgfile/ac_nuc_feed.png";
 
 		$("#header-search").hide();
 	},

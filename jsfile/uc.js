@@ -24,11 +24,11 @@ var uclist = {
 	// Melakukan perubahan icon pada tab menu
 	changeIcon: function(){
 		document.getElementById("header-name").innerHTML = "Communications";
-		document.getElementById("uc_icon").src = " ../imgfile/ac_nuc_chat.png";
-		document.getElementById("directories_icon").src = " ../imgfile/inac_nuc_talent.png";
-		document.getElementById("form_icon").src = " ../imgfile/inac_nuc_survey.png";
-		document.getElementById("discover_icon").src = " ../imgfile/inac_nuc_live.png";
-		document.getElementById("more_icon").src = " ../imgfile/inac_nuc_feed.png";
+		document.getElementById("uc_icon").src = "./imgfile/ac_nuc_chat.png";
+		document.getElementById("directories_icon").src = "./imgfile/inac_nuc_talent.png";
+		document.getElementById("form_icon").src = "./imgfile/inac_nuc_survey.png";
+		document.getElementById("discover_icon").src = "./imgfile/inac_nuc_live.png";
+		document.getElementById("more_icon").src = "./imgfile/inac_nuc_feed.png";
 
 
 		$("#header-search").hide();
@@ -59,7 +59,7 @@ var uclist = {
 
 		$('#ih-bar-filter').empty();
 		var ucFilter =
-			'<div onclick="detaile.showHideFilter()" id="arrowChange" class="ih-large">All Comunications<img id="arrowchange" class="icon_sort" src=" ../imgfile/twsn_search_down.png"></div>' +
+			'<div onclick="detaile.showHideFilter()" id="arrowChange" class="ih-large">All Comunications<img id="arrowchange" class="icon_sort" src="./imgfile/twsn_search_down.png"></div>' +
 			'<div class="filter_list"> ' +
 			'<i class="fas fa-users ih-text-blue ih-small " ></i>' +
 			'<span> Organization Comunication</span>' +
